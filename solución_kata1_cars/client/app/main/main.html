@@ -26,8 +26,15 @@
 
             <div class="col-lg-10">
               <div ng-repeat="configType in options.configurationTypes" class="inline">
-                <input id="type-{{configType.value}}" name="configType" ng-model="customer.type" type="radio"
-                       ng-value="configType.value" ng-change="changeOptions()"/> <span>{{configType.label}}</span>
+                <question
+                id="type-{{configType.value}}"
+                name="configType"
+                ng-model="customer.type"
+                type="radio"
+                ng-value="configType.value"
+                ng-change="changeOptions()"
+                label="{{configType.label}}" />
+              </question>
               </div>
             </div>
           </div>
@@ -38,10 +45,11 @@
             </div>
 
             <div class="col-lg-10">
-              <select id="body-engine" name="body-engine" ng-model="customer.bodyEngine"
+              <question id="body-engine" name="body-engine" ng-model="customer.bodyEngine"></question>
+              <!-- <select id="body-engine" name="body-engine" ng-model="customer.bodyEngine"
                       ng-options="bodyEngine.value as bodyEngine.label for bodyEngine in options.bodyEngines"
                       ng-disabled="customer.type === SPORT">
-              </select>
+              </select> -->
             </div>
           </div>
 
